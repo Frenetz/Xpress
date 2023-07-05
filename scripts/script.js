@@ -1,6 +1,3 @@
-let firstCard = document.getElementById("firstCard"); //man
-let secondCard = document.getElementById("secondCard"); //woman
-let thirdCard = document.getElementById("thirdCard"); //kid
 let body = document.getElementById("body");
 let input = document.getElementById("input");
 let menu_input = document.getElementById("menu_input");
@@ -72,48 +69,347 @@ mainContentButton.addEventListener("mouseleave", function () {
 });
 
 //Функции для работы первого слайдера
+// firstCard.addEventListener("click", function () {
+//   //Обработчик для man
+//   if (
+//     firstCard.classList.contains("left") ||
+//     firstCard.classList.contains("right")
+//   ) {
+//     thirdCard.classList.remove(...thirdCard.classList);
+//     thirdCard.classList.add("left");
+//     secondCard.classList.remove(...secondCard.classList);
+//     secondCard.classList.add("right");
+//     firstCard.classList.remove(...firstCard.classList);
+//     firstCard.classList.add("mid");
+//   }
+// });
+
+// secondCard.addEventListener("click", function () {
+//   //Обработчик для woman
+//   if (
+//     secondCard.classList.contains("left") ||
+//     secondCard.classList.contains("right")
+//   ) {
+//     firstCard.classList.remove(...firstCard.classList);
+//     firstCard.classList.add("left");
+//     thirdCard.classList.remove(...thirdCard.classList);
+//     thirdCard.classList.add("right");
+//     secondCard.classList.remove(...secondCard.classList);
+//     secondCard.classList.add("mid");
+//   }
+// });
+
+// thirdCard.addEventListener("click", function () {
+//   //Обработчик для kid
+//   if (
+//     thirdCard.classList.contains("left") ||
+//     thirdCard.classList.contains("right")
+//   ) {
+//     secondCard.classList.remove(...secondCard.classList);
+//     secondCard.classList.add("left");
+//     firstCard.classList.remove(...firstCard.classList);
+//     firstCard.classList.add("right");
+//     thirdCard.classList.remove(...thirdCard.classList);
+//     thirdCard.classList.add("mid");
+//   }
+// });
+
+// const firstCard = document.getElementById("firstCard");
+// const secondCard = document.getElementById("secondCard");
+// const thirdCard = document.getElementById("thirdCard");
+// let timeDelay = 0.5;
+
+// firstCard.addEventListener("click", function () {
+//   if (firstCard.classList.contains("left")) {
+//     firstCard.style.zIndex = "999";
+//     secondCard.style.zIndex = "1";
+//     thirdCard.style.zIndex = "0";
+
+//     secondCard.style.animation = "sizelower 0.5s forwards";
+//     setTimeout(function () {
+//       firstCard.style.animation = `left-click ${timeDelay}s linear forwards`;
+//       secondCard.style.animation = `mid-card-right ${timeDelay}s linear forwards`;
+//       thirdCard.style.animation = `right-card-left ${timeDelay}s linear forwards`;
+//       firstCard.classList.remove(...firstCard.classList);
+//       firstCard.classList.add("mid");
+//       secondCard.classList.remove(...secondCard.classList);
+//       secondCard.classList.add("right");
+//       thirdCard.classList.remove(...thirdCard.classList);
+//       thirdCard.classList.add("left");
+//     }, 500);
+//   }
+//   if (firstCard.classList.contains("right")) {
+//     firstCard.style.zIndex = "999";
+//     secondCard.style.zIndex = "0";
+//     thirdCard.style.zIndex = "1";
+
+//     thirdCard.style.animation = "sizelower 0.5s forwards";
+
+//     setTimeout(function () {
+//       firstCard.style.animation = `right-click ${timeDelay}s linear forwards`;
+//       secondCard.style.animation = `left-card-right ${timeDelay}s linear forwards`;
+//       thirdCard.style.animation = `mid-card-left ${timeDelay}s linear forwards`;
+//       firstCard.classList.remove(...firstCard.classList);
+//       firstCard.classList.add("mid");
+//       secondCard.classList.remove(...secondCard.classList);
+//       secondCard.classList.add("right");
+//       thirdCard.classList.remove(...thirdCard.classList);
+//       thirdCard.classList.add("left");
+//     }, 500);
+//   }
+// });
+
+// secondCard.addEventListener("click", function () {
+//   if (secondCard.classList.contains("left")) {
+//     firstCard.style.zIndex = "0";
+//     secondCard.style.zIndex = "999";
+//     thirdCard.style.zIndex = "1";
+
+//     thirdCard.style.animation = "sizelower 0.5s forwards";
+//     setTimeout(function () {
+//       firstCard.style.animation = `right-card-left ${timeDelay}s linear forwards`;
+//       secondCard.style.animation = `left-click ${timeDelay}s linear forwards`;
+//       thirdCard.style.animation = `mid-card-right ${timeDelay}s linear forwards`;
+//       firstCard.classList.remove(...firstCard.classList);
+//       firstCard.classList.add("left");
+//       secondCard.classList.remove(...secondCard.classList);
+//       secondCard.classList.add("mid");
+//       thirdCard.classList.remove(...thirdCard.classList);
+//       thirdCard.classList.add("right");
+//     }, 500);
+//   }
+
+//   if (secondCard.classList.contains("right")) {
+//     firstCard.style.zIndex = "1";
+//     secondCard.style.zIndex = "999";
+//     thirdCard.style.zIndex = "0";
+
+//     firstCard.style.animation = "sizelower 0.5s forwards";
+
+//     setTimeout(function () {
+//       firstCard.style.animation = `mid-card-left ${timeDelay}s linear forwards`;
+//       secondCard.style.animation = `right-click ${timeDelay}s linear forwards`;
+//       thirdCard.style.animation = `left-card-right ${timeDelay}s linear forwards`;
+//       firstCard.classList.remove(...firstCard.classList);
+//       firstCard.classList.add("left");
+//       secondCard.classList.remove(...secondCard.classList);
+//       secondCard.classList.add("mid");
+//       thirdCard.classList.remove(...thirdCard.classList);
+//       thirdCard.classList.add("right");
+//     }, 500);
+//   }
+// });
+
+// thirdCard.addEventListener("click", function () {
+//   if (thirdCard.classList.contains("right")) {
+//     firstCard.style.zIndex = "0";
+//     secondCard.style.zIndex = "1";
+//     thirdCard.style.zIndex = "999";
+
+//     secondCard.style.animation = "sizelower 0.5s forwards";
+
+//     setTimeout(function () {
+//       firstCard.style.animation = `left-card-right ${timeDelay}s linear forwards`;
+//       secondCard.style.animation = `mid-card-left ${timeDelay}s linear forwards`;
+//       thirdCard.style.animation = `right-click ${timeDelay}s linear forwards`;
+//       firstCard.classList.remove(...firstCard.classList);
+//       firstCard.classList.add("right");
+//       secondCard.classList.remove(...secondCard.classList);
+//       secondCard.classList.add("left");
+//       thirdCard.classList.remove(...thirdCard.classList);
+//       thirdCard.classList.add("mid");
+//     }, 500);
+//   }
+//   if (thirdCard.classList.contains("left")) {
+//     firstCard.style.zIndex = "1";
+//     secondCard.style.zIndex = "0";
+//     thirdCard.style.zIndex = "999";
+
+//     firstCard.style.animation = "sizelower 0.5s forwards";
+//     setTimeout(function () {
+//       firstCard.style.animation = `mid-card-right ${timeDelay}s linear forwards`;
+//       secondCard.style.animation = `right-card-left ${timeDelay}s linear forwards`;
+//       thirdCard.style.animation = `left-click ${timeDelay}s linear forwards`;
+//       firstCard.classList.remove(...firstCard.classList);
+//       firstCard.classList.add("right");
+//       secondCard.classList.remove(...secondCard.classList);
+//       secondCard.classList.add("left");
+//       thirdCard.classList.remove(...thirdCard.classList);
+//       thirdCard.classList.add("mid");
+//     }, 500);
+//   }
+// });
+
+const firstCard = document.getElementById("firstCard");
+const secondCard = document.getElementById("secondCard");
+const thirdCard = document.getElementById("thirdCard");
+const slider = document.getElementById("slider");
+let timeDelay = 0.5;
+
+const cloneFirstCard = firstCard.cloneNode("true");
+const cloneSecondCard = secondCard.cloneNode("true");
+const cloneThirdCard = thirdCard.cloneNode("true");
+
+slider.insertAdjacentElement("beforeend", cloneFirstCard);
+cloneFirstCard.style.display = "none";
+slider.insertAdjacentElement("beforeend", cloneSecondCard);
+cloneSecondCard.style.display = "none";
+slider.insertAdjacentElement("beforeend", cloneThirdCard);
+cloneThirdCard.style.display = "none";
+
 firstCard.addEventListener("click", function () {
-  //Обработчик для man
-  if (
-    firstCard.classList.contains("left") ||
-    firstCard.classList.contains("right")
-  ) {
-    thirdCard.classList.remove(...thirdCard.classList);
-    thirdCard.classList.add("left");
-    secondCard.classList.remove(...secondCard.classList);
-    secondCard.classList.add("right");
-    firstCard.classList.remove(...firstCard.classList);
-    firstCard.classList.add("mid");
+  if (firstCard.classList.contains("left")) {
+    firstCard.style.zIndex = "999";
+    secondCard.style.zIndex = "1";
+    thirdCard.style.zIndex = "0";
+    secondCard.style.animation = "sizelower 0.5s forwards";
+
+    cloneThirdCard.classList.remove(...cloneThirdCard.classList);
+    cloneThirdCard.classList.add("right");
+    setTimeout(function () {
+      firstCard.style.animation = `left-click ${timeDelay}s linear forwards`;
+      secondCard.style.animation = `mid-card-right ${timeDelay}s linear forwards`;
+      thirdCard.style.animation = `right-card-left ${timeDelay}s linear forwards`;
+      cloneThirdCard.style.display = "block";
+      cloneThirdCard.style.animation = "cloneRotateLeft linear 0.5s";
+      firstCard.classList.remove(...firstCard.classList);
+      firstCard.classList.add("mid");
+      secondCard.classList.remove(...secondCard.classList);
+      secondCard.classList.add("right");
+      thirdCard.classList.remove(...thirdCard.classList);
+      thirdCard.classList.add("left");
+      setTimeout(function () {
+        cloneThirdCard.style.display = "none";
+      }, 500);
+    }, 500);
+  }
+  if (firstCard.classList.contains("right")) {
+    firstCard.style.zIndex = "999";
+    secondCard.style.zIndex = "0";
+    thirdCard.style.zIndex = "1";
+    thirdCard.style.animation = "sizelower 0.5s forwards";
+    cloneSecondCard.classList.remove(...cloneSecondCard.classList);
+    cloneSecondCard.classList.add("left");
+    setTimeout(function () {
+      firstCard.style.animation = `right-click ${timeDelay}s linear forwards`;
+      secondCard.style.animation = `left-card-right ${timeDelay}s linear forwards`;
+      thirdCard.style.animation = `mid-card-left ${timeDelay}s linear forwards`;
+      cloneSecondCard.style.display = "block";
+      cloneSecondCard.style.animation = "cloneRotateRight linear 0.5s";
+      firstCard.classList.remove(...firstCard.classList);
+      firstCard.classList.add("mid");
+      secondCard.classList.remove(...secondCard.classList);
+      secondCard.classList.add("right");
+      thirdCard.classList.remove(...thirdCard.classList);
+      thirdCard.classList.add("left");
+      setTimeout(function () {
+        cloneSecondCard.style.display = "none";
+      }, 500);
+    }, 500);
   }
 });
 
 secondCard.addEventListener("click", function () {
-  //Обработчик для woman
-  if (
-    secondCard.classList.contains("left") ||
-    secondCard.classList.contains("right")
-  ) {
-    firstCard.classList.remove(...firstCard.classList);
-    firstCard.classList.add("left");
-    thirdCard.classList.remove(...thirdCard.classList);
-    thirdCard.classList.add("right");
-    secondCard.classList.remove(...secondCard.classList);
-    secondCard.classList.add("mid");
+  if (secondCard.classList.contains("left")) {
+    firstCard.style.zIndex = "0";
+    secondCard.style.zIndex = "999";
+    thirdCard.style.zIndex = "1";
+    cloneFirstCard.classList.remove(...cloneFirstCard.classList);
+    cloneFirstCard.classList.add("right");
+    thirdCard.style.animation = "sizelower 0.5s forwards";
+    setTimeout(function () {
+      firstCard.style.animation = `right-card-left ${timeDelay}s linear forwards`;
+      secondCard.style.animation = `left-click ${timeDelay}s linear forwards`;
+      thirdCard.style.animation = `mid-card-right ${timeDelay}s linear forwards`;
+      cloneFirstCard.style.display = "block";
+      cloneFirstCard.style.animation = "cloneRotateLeft linear 0.5s";
+      firstCard.classList.remove(...firstCard.classList);
+      firstCard.classList.add("left");
+      secondCard.classList.remove(...secondCard.classList);
+      secondCard.classList.add("mid");
+      thirdCard.classList.remove(...thirdCard.classList);
+      thirdCard.classList.add("right");
+      setTimeout(function () {
+        cloneFirstCard.style.display = "none";
+      }, 500);
+    }, 500);
+  }
+
+  if (secondCard.classList.contains("right")) {
+    firstCard.style.zIndex = "1";
+    secondCard.style.zIndex = "999";
+    thirdCard.style.zIndex = "0";
+    firstCard.style.animation = "sizelower 0.5s forwards";
+    cloneThirdCard.classList.remove(...cloneThirdCard.classList);
+    cloneThirdCard.classList.add("left");
+    setTimeout(function () {
+      firstCard.style.animation = `mid-card-left ${timeDelay}s linear forwards`;
+      secondCard.style.animation = `right-click ${timeDelay}s linear forwards`;
+      thirdCard.style.animation = `left-card-right ${timeDelay}s linear forwards`;
+      cloneThirdCard.style.display = "block";
+      cloneThirdCard.style.animation = "cloneRotateRight linear 0.5s";
+      firstCard.classList.remove(...firstCard.classList);
+      firstCard.classList.add("left");
+      secondCard.classList.remove(...secondCard.classList);
+      secondCard.classList.add("mid");
+      thirdCard.classList.remove(...thirdCard.classList);
+      thirdCard.classList.add("right");
+      setTimeout(function () {
+        cloneThirdCard.style.display = "none";
+      }, 500);
+    }, 500);
   }
 });
 
 thirdCard.addEventListener("click", function () {
-  //Обработчик для kid
-  if (
-    thirdCard.classList.contains("left") ||
-    thirdCard.classList.contains("right")
-  ) {
-    secondCard.classList.remove(...secondCard.classList);
-    secondCard.classList.add("left");
-    firstCard.classList.remove(...firstCard.classList);
-    firstCard.classList.add("right");
-    thirdCard.classList.remove(...thirdCard.classList);
-    thirdCard.classList.add("mid");
+  if (thirdCard.classList.contains("right")) {
+    firstCard.style.zIndex = "0";
+    secondCard.style.zIndex = "1";
+    thirdCard.style.zIndex = "999";
+    secondCard.style.animation = "sizelower 0.5s forwards";
+
+    cloneFirstCard.classList.remove(...cloneFirstCard.classList);
+    cloneFirstCard.classList.add("left");
+    setTimeout(function () {
+      firstCard.style.animation = `left-card-right ${timeDelay}s linear forwards`;
+      secondCard.style.animation = `mid-card-left ${timeDelay}s linear forwards`;
+      thirdCard.style.animation = `right-click ${timeDelay}s linear forwards`;
+      cloneFirstCard.style.display = "block";
+      cloneFirstCard.style.animation = "cloneRotateRight linear 0.5s";
+      firstCard.classList.remove(...firstCard.classList);
+      firstCard.classList.add("right");
+      secondCard.classList.remove(...secondCard.classList);
+      secondCard.classList.add("left");
+      thirdCard.classList.remove(...thirdCard.classList);
+      thirdCard.classList.add("mid");
+      setTimeout(function () {
+        cloneFirstCard.style.display = "none";
+      }, 500);
+    }, 500);
+  }
+  if (thirdCard.classList.contains("left")) {
+    firstCard.style.zIndex = "1";
+    secondCard.style.zIndex = "0";
+    thirdCard.style.zIndex = "999";
+    cloneSecondCard.classList.remove(...cloneSecondCard.classList);
+    cloneSecondCard.classList.add("right");
+    firstCard.style.animation = "sizelower 0.5s forwards";
+    setTimeout(function () {
+      firstCard.style.animation = `mid-card-right ${timeDelay}s linear forwards`;
+      secondCard.style.animation = `right-card-left ${timeDelay}s linear forwards`;
+      thirdCard.style.animation = `left-click ${timeDelay}s linear forwards`;
+      cloneSecondCard.style.display = "block";
+      cloneSecondCard.style.animation = "cloneRotateLeft linear 0.5s";
+      firstCard.classList.remove(...firstCard.classList);
+      firstCard.classList.add("right");
+      secondCard.classList.remove(...secondCard.classList);
+      secondCard.classList.add("left");
+      thirdCard.classList.remove(...thirdCard.classList);
+      thirdCard.classList.add("mid");
+      setTimeout(function () {
+        cloneSecondCard.style.display = "none";
+      }, 500);
+    }, 500);
   }
 });
 
@@ -139,113 +435,592 @@ function deleteColour() {
   });
 }
 
+// function firstWomanChoose() {
+//   firstWoman.style.transform = null;
+//   secondWoman.style.transform = null;
+//   thirdWoman.style.transform = null;
+//   fourthWoman.style.transform = null;
+//   fifthWoman.style.transform = null;
+//   firstWoman.classList.remove(...firstWoman.classList);
+//   firstWoman.classList.add("mid-woman");
+//   secondWoman.classList.remove(...secondWoman.classList);
+//   secondWoman.classList.add("right-woman");
+//   secondWoman.style.transform = "scaleX(-1) rotateY(10deg)";
+//   thirdWoman.classList.remove(...thirdWoman.classList);
+//   thirdWoman.classList.add("right-right-woman");
+//   fourthWoman.classList.remove(...fourthWoman.classList);
+//   fourthWoman.classList.add("left-left-woman");
+//   fourthWoman.style.transform = "scaleX(-1) rotateY(-15deg)";
+//   fifthWoman.classList.remove(...fifthWoman.classList);
+//   fifthWoman.classList.add("left-woman");
+//   fifthWoman.style.transform = "scaleX(-1) rotateY(-10deg)";
+//   deleteColour();
+//   firstEclipse.classList.add("button-point");
+// }
+
+let sliderDelay = 0.5;
+
+function womanAnimationAddClass(event) {
+  const element = event.target;
+  const animationName = event.animationName;
+  element.classList.remove(...element.classList);
+  console.log(animationName);
+  if (animationName == "ll-to-l") {
+    element.classList.add("left-woman");
+  } else if (animationName == "l-to-m") {
+    element.classList.add("mid-woman");
+  } else if (animationName == "m-to-r") {
+    element.classList.add("right-woman");
+  } else if (animationName == "r-to-rr") {
+    element.classList.add("right-right-woman");
+  } else if (animationName == "rr-to-ll" || animationName == "rr-to-ll2") {
+    element.classList.add("left-left-woman");
+  } else if (
+    animationName == "ll-to-l-reverse" ||
+    animationName == "m-to-l-reverse"
+  ) {
+    element.classList.add("left-woman-reverse");
+  } else if (
+    animationName == "l-to-m-reverse" ||
+    animationName == "r-to-m-reverse"
+  ) {
+    element.classList.add("mid-woman-reverse");
+  } else if (
+    animationName == "m-to-r-reverse" ||
+    animationName == "rr-to-r-reverse"
+  ) {
+    element.classList.add("right-woman-reverse");
+  } else if (
+    animationName == "r-to-rr-reverse" ||
+    animationName == "ll-to-rr-reverse"
+  ) {
+    element.classList.add("right-right-woman-reverse");
+  } else if (
+    animationName == "rr-to-ll-reverse" ||
+    animationName == "l-to-ll-reverse"
+  ) {
+    element.classList.add("left-left-woman-reverse");
+  } else if (animationName == "rr-to-r") {
+    element.classList.add("right-woman");
+  } else if (animationName == "r-to-m") {
+    element.classList.add("mid-woman");
+  } else if (animationName == "m-to-l") {
+    element.classList.add("left-woman");
+  } else if (animationName == "l-to-ll") {
+    element.classList.add("left-left-woman");
+  } else if (animationName == "ll-to-rr" || animationName == "ll-to-rr2") {
+    element.classList.add("right-right-woman");
+  }
+}
+
 function firstWomanChoose() {
-  firstWoman.style.transform = null;
-  secondWoman.style.transform = null;
-  thirdWoman.style.transform = null;
-  fourthWoman.style.transform = null;
-  fifthWoman.style.transform = null;
-  firstWoman.classList.remove(...firstWoman.classList);
-  firstWoman.classList.add("mid-woman");
-  secondWoman.classList.remove(...secondWoman.classList);
-  secondWoman.classList.add("right-woman");
-  secondWoman.style.transform = "scaleX(-1) rotateY(10deg)";
-  thirdWoman.classList.remove(...thirdWoman.classList);
-  thirdWoman.classList.add("right-right-woman");
-  fourthWoman.classList.remove(...fourthWoman.classList);
-  fourthWoman.classList.add("left-left-woman");
-  fourthWoman.style.transform = "scaleX(-1) rotateY(-15deg)";
-  fifthWoman.classList.remove(...fifthWoman.classList);
-  fifthWoman.classList.add("left-woman");
-  fifthWoman.style.transform = "scaleX(-1) rotateY(-10deg)";
-  deleteColour();
-  firstEclipse.classList.add("button-point");
+  if (firstWoman.classList.contains("left-left-woman")) {
+    firstWoman.style.animation = `ll-to-l ${sliderDelay}s 0.5s forwards`;
+    firstWoman.style.zIndex = "1";
+    firstWoman.addEventListener("animationend", womanAnimationAddClass);
+    secondWoman.style.animation = `l-to-m ${sliderDelay}s 0.5s forwards`;
+    secondWoman.style.zIndex = "4";
+    secondWoman.addEventListener("animationend", womanAnimationAddClass);
+    thirdWoman.style.animation = `m-to-r 0.5s forwards`;
+    thirdWoman.style.zIndex = "1";
+    thirdWoman.addEventListener("animationend", womanAnimationAddClass);
+    fourthWoman.style.animation = `r-to-rr 0.5s forwards`;
+    fourthWoman.style.zIndex = "0";
+    fourthWoman.addEventListener("animationend", womanAnimationAddClass);
+    fifthWoman.style.animation = `rr-to-ll-reverse ${sliderDelay}s 0.5s forwards`;
+    fifthWoman.style.zIndex = "-1";
+    fifthWoman.addEventListener("animationend", womanAnimationAddClass);
+    setTimeout(function () {
+      firstWoman.style.animation = `l-to-m ${sliderDelay}s 0.5s forwards`;
+      firstWoman.style.zIndex = "4";
+      firstWoman.addEventListener("animationend", womanAnimationAddClass);
+      secondWoman.style.animation = `m-to-r-reverse 0.5s forwards`;
+      secondWoman.style.zIndex = "1";
+      secondWoman.addEventListener("animationend", womanAnimationAddClass);
+      thirdWoman.style.animation = `r-to-rr 0.5s forwards`;
+      thirdWoman.style.zIndex = "0";
+      thirdWoman.addEventListener("animationend", womanAnimationAddClass);
+      fourthWoman.style.animation = `rr-to-ll-reverse ${sliderDelay}s 0.5s forwards`;
+      fourthWoman.style.zIndex = "-1";
+      fourthWoman.addEventListener("animationend", womanAnimationAddClass);
+      fifthWoman.style.animation = `ll-to-l-reverse ${sliderDelay}s 0.5s forwards`;
+      fifthWoman.style.zIndex = "1";
+      fifthWoman.addEventListener("animationend", womanAnimationAddClass);
+    }, 1050);
+  } else if (firstWoman.classList.contains("left-woman")) {
+    firstWoman.style.animation = `l-to-m ${sliderDelay}s 0.5s forwards`;
+    firstWoman.style.zIndex = "4";
+    firstWoman.addEventListener("animationend", womanAnimationAddClass);
+    secondWoman.style.animation = `m-to-r-reverse 0.5s forwards`;
+    secondWoman.style.zIndex = "1";
+    secondWoman.addEventListener("animationend", womanAnimationAddClass);
+    thirdWoman.style.animation = `r-to-rr 0.5s forwards`;
+    thirdWoman.style.zIndex = "0";
+    thirdWoman.addEventListener("animationend", womanAnimationAddClass);
+    fourthWoman.style.animation = `rr-to-ll-reverse ${sliderDelay}s 0.5s forwards`;
+    fourthWoman.style.zIndex = "-1";
+    fourthWoman.addEventListener("animationend", womanAnimationAddClass);
+    fifthWoman.style.animation = `ll-to-l-reverse ${sliderDelay}s 0.5s forwards`;
+    fifthWoman.style.zIndex = "1";
+    fifthWoman.addEventListener("animationend", womanAnimationAddClass);
+  } else if (firstWoman.classList.contains("right-woman-reverse")) {
+    firstWoman.style.animation = `r-to-m ${sliderDelay}s 0.5s forwards`;
+    firstWoman.style.zIndex = "4";
+    firstWoman.addEventListener("animationend", womanAnimationAddClass);
+    secondWoman.style.animation = `rr-to-r-reverse 0.5s 0.5s forwards`;
+    secondWoman.style.zIndex = "1";
+    secondWoman.addEventListener("animationend", womanAnimationAddClass);
+    thirdWoman.style.animation = `ll-to-rr 0.5s 0.5s forwards`;
+    thirdWoman.style.zIndex = "-1";
+    thirdWoman.addEventListener("animationend", womanAnimationAddClass);
+    fourthWoman.style.animation = `l-to-ll-reverse ${sliderDelay}s forwards`;
+    fourthWoman.style.zIndex = "0";
+    fourthWoman.addEventListener("animationend", womanAnimationAddClass);
+    fifthWoman.style.animation = `m-to-l-reverse ${sliderDelay}s forwards`;
+    fifthWoman.style.zIndex = "1";
+    fifthWoman.addEventListener("animationend", womanAnimationAddClass);
+  } else if (firstWoman.classList.contains("right-right-woman-reverse")) {
+    firstWoman.style.animation = `rr-to-r-reverse ${sliderDelay}s 0.5s forwards`;
+    firstWoman.addEventListener("animationend", womanAnimationAddClass);
+    firstWoman.style.zIndex = "1";
+    secondWoman.style.animation = `ll-to-rr-reverse ${sliderDelay}s 0.5s forwards`;
+    secondWoman.addEventListener("animationend", womanAnimationAddClass);
+    secondWoman.style.zIndex = "-1";
+    thirdWoman.style.animation = `l-to-ll 0.5s forwards`;
+    thirdWoman.addEventListener("animationend", womanAnimationAddClass);
+    thirdWoman.style.zIndex = "0";
+    fourthWoman.style.animation = `m-to-l-reverse 0.5s forwards`;
+    fourthWoman.addEventListener("animationend", womanAnimationAddClass);
+    fourthWoman.style.zIndex = "1";
+    fifthWoman.style.animation = `r-to-m ${sliderDelay}s 0.5s forwards`;
+    fifthWoman.addEventListener("animationend", womanAnimationAddClass);
+    fifthWoman.style.zIndex = "4";
+    setTimeout(function () {
+      firstWoman.style.animation = `r-to-m ${sliderDelay}s 0.5s forwards`;
+      firstWoman.style.zIndex = "4";
+      firstWoman.addEventListener("animationend", womanAnimationAddClass);
+      secondWoman.style.animation = `rr-to-r-reverse 0.5s 0.5s forwards`;
+      secondWoman.style.zIndex = "1";
+      secondWoman.addEventListener("animationend", womanAnimationAddClass);
+      thirdWoman.style.animation = `ll-to-rr 0.5s 0.5s forwards`;
+      thirdWoman.style.zIndex = "-1";
+      thirdWoman.addEventListener("animationend", womanAnimationAddClass);
+      fourthWoman.style.animation = `l-to-ll-reverse ${sliderDelay}s forwards`;
+      fourthWoman.style.zIndex = "0";
+      fourthWoman.addEventListener("animationend", womanAnimationAddClass);
+      fifthWoman.style.animation = `m-to-l-reverse ${sliderDelay}s forwards`;
+      fifthWoman.style.zIndex = "1";
+      fifthWoman.addEventListener("animationend", womanAnimationAddClass);
+    }, 1050);
+  }
 }
 
 function secondWomanChoose() {
-  firstWoman.style.transform = null;
-  secondWoman.style.transform = null;
-  thirdWoman.style.transform = null;
-  fourthWoman.style.transform = null;
-  fifthWoman.style.transform = null;
-  secondWoman.classList.remove(...secondWoman.classList);
-  secondWoman.classList.add("mid-woman");
-  firstWoman.classList.remove(...firstWoman.classList);
-  firstWoman.classList.add("left-woman");
-  thirdWoman.classList.remove(...thirdWoman.classList);
-  thirdWoman.classList.add("right-woman");
-  fourthWoman.classList.remove(...fourthWoman.classList);
-  fourthWoman.classList.add("right-right-woman");
-  fifthWoman.classList.remove(...fifthWoman.classList);
-  fifthWoman.classList.add("left-left-woman");
-  fifthWoman.style.transform = "scaleX(-1) rotateY(-15deg)";
-  deleteColour();
-  secondEclipse.classList.add("button-point");
+  if (secondWoman.classList.contains("left-left-woman")) {
+    firstWoman.style.animation = `rr-to-ll2 ${sliderDelay}s 0.5s forwards`;
+    firstWoman.addEventListener("animationend", womanAnimationAddClass);
+    firstWoman.style.zIndex = "-1";
+    secondWoman.style.animation = `ll-to-l ${sliderDelay}s 0.5s forwards`;
+    secondWoman.addEventListener("animationend", womanAnimationAddClass);
+    secondWoman.style.zIndex = "1";
+    thirdWoman.style.animation = `l-to-m 0.5s  0.5s forwards`;
+    thirdWoman.addEventListener("animationend", womanAnimationAddClass);
+    thirdWoman.style.zIndex = "4";
+    fourthWoman.style.animation = `m-to-r 0.5s forwards`;
+    fourthWoman.addEventListener("animationend", womanAnimationAddClass);
+    fourthWoman.style.zIndex = "1";
+    fifthWoman.style.animation = `r-to-rr ${sliderDelay}s forwards`;
+    fifthWoman.addEventListener("animationend", womanAnimationAddClass);
+    fifthWoman.style.zIndex = "0";
+    setTimeout(function () {
+      firstWoman.style.animation = `ll-to-l ${sliderDelay}s 0.5s forwards`;
+      firstWoman.addEventListener("animationend", womanAnimationAddClass);
+      firstWoman.style.zIndex = "1";
+      secondWoman.style.animation = `l-to-m ${sliderDelay}s 0.5s forwards`;
+      secondWoman.addEventListener("animationend", womanAnimationAddClass);
+      secondWoman.style.zIndex = "4";
+      thirdWoman.style.animation = `m-to-r 0.5s forwards`;
+      thirdWoman.addEventListener("animationend", womanAnimationAddClass);
+      thirdWoman.style.zIndex = "1";
+      fourthWoman.style.animation = `r-to-rr 0.5s forwards`;
+      fourthWoman.addEventListener("animationend", womanAnimationAddClass);
+      fourthWoman.style.zIndex = "0";
+      fifthWoman.style.animation = `rr-to-ll-reverse ${sliderDelay}s 0.5s forwards`;
+      fifthWoman.addEventListener("animationend", womanAnimationAddClass);
+      fifthWoman.style.zIndex = "-1";
+    }, 1050);
+  } else if (secondWoman.classList.contains("left-woman")) {
+    firstWoman.style.animation = `ll-to-l ${sliderDelay}s 0.5s forwards`;
+    firstWoman.addEventListener("animationend", womanAnimationAddClass);
+    firstWoman.style.zIndex = "1";
+    secondWoman.style.animation = `l-to-m ${sliderDelay}s 0.5s forwards`;
+    secondWoman.addEventListener("animationend", womanAnimationAddClass);
+    secondWoman.style.zIndex = "4";
+    thirdWoman.style.animation = `m-to-r 0.5s forwards`;
+    thirdWoman.addEventListener("animationend", womanAnimationAddClass);
+    thirdWoman.style.zIndex = "1";
+    fourthWoman.style.animation = `r-to-rr 0.5s forwards`;
+    fourthWoman.addEventListener("animationend", womanAnimationAddClass);
+    fourthWoman.style.zIndex = "0";
+    fifthWoman.style.animation = `rr-to-ll-reverse ${sliderDelay}s 0.5s forwards`;
+    fifthWoman.addEventListener("animationend", womanAnimationAddClass);
+    fifthWoman.style.zIndex = "-1";
+  } else if (secondWoman.classList.contains("right-woman-reverse")) {
+    firstWoman.style.animation = `m-to-l ${sliderDelay}s forwards`;
+    firstWoman.addEventListener("animationend", womanAnimationAddClass);
+    firstWoman.style.zIndex = "1";
+    secondWoman.style.animation = `r-to-m ${sliderDelay}s 0.5s forwards`;
+    secondWoman.addEventListener("animationend", womanAnimationAddClass);
+    secondWoman.style.zIndex = "4";
+    thirdWoman.style.animation = `rr-to-r 0.5s 0.5s forwards`;
+    thirdWoman.addEventListener("animationend", womanAnimationAddClass);
+    thirdWoman.style.zIndex = "1";
+    fourthWoman.style.animation = `ll-to-rr2 0.5s 0.5s forwards`;
+    fourthWoman.addEventListener("animationend", womanAnimationAddClass);
+    fourthWoman.style.zIndex = "-1";
+    fifthWoman.style.animation = `l-to-ll-reverse ${sliderDelay}s forwards`;
+    fifthWoman.addEventListener("animationend", womanAnimationAddClass);
+    fifthWoman.style.zIndex = "0";
+  } else if (secondWoman.classList.contains("right-right-woman-reverse")) {
+    firstWoman.style.animation = `r-to-m ${sliderDelay}s 0.5s forwards`;
+    firstWoman.addEventListener("animationend", womanAnimationAddClass);
+    firstWoman.style.zIndex = "4";
+    secondWoman.style.animation = `rr-to-r-reverse ${sliderDelay}s 0.5s forwards`;
+    secondWoman.addEventListener("animationend", womanAnimationAddClass);
+    secondWoman.style.zIndex = "1";
+    thirdWoman.style.animation = `ll-to-rr 0.5s 0.5s forwards`;
+    thirdWoman.addEventListener("animationend", womanAnimationAddClass);
+    thirdWoman.style.zIndex = "-1";
+    fourthWoman.style.animation = `l-to-ll-reverse 0.5s forwards`;
+    fourthWoman.addEventListener("animationend", womanAnimationAddClass);
+    fourthWoman.style.zIndex = "0";
+    fifthWoman.style.animation = `m-to-l-reverse ${sliderDelay}s forwards`;
+    fifthWoman.addEventListener("animationend", womanAnimationAddClass);
+    fifthWoman.style.zIndex = "1";
+    setTimeout(function () {
+      firstWoman.style.animation = `m-to-l ${sliderDelay}s forwards`;
+      firstWoman.addEventListener("animationend", womanAnimationAddClass);
+      firstWoman.style.zIndex = "1";
+      secondWoman.style.animation = `r-to-m ${sliderDelay}s 0.5s forwards`;
+      secondWoman.addEventListener("animationend", womanAnimationAddClass);
+      secondWoman.style.zIndex = "4";
+      thirdWoman.style.animation = `rr-to-r 0.5s 0.5s forwards`;
+      thirdWoman.addEventListener("animationend", womanAnimationAddClass);
+      thirdWoman.style.zIndex = "1";
+      fourthWoman.style.animation = `ll-to-rr2 0.5s forwards`;
+      fourthWoman.addEventListener("animationend", womanAnimationAddClass);
+      fourthWoman.style.zIndex = "-1";
+      fifthWoman.style.animation = `l-to-ll-reverse ${sliderDelay}s forwards`;
+      fifthWoman.addEventListener("animationend", womanAnimationAddClass);
+      fifthWoman.style.zIndex = "0";
+    }, 1050);
+  }
 }
 
 function thirdWomanChoose() {
-  firstWoman.style.transform = null;
-  secondWoman.style.transform = null;
-  thirdWoman.style.transform = null;
-  fourthWoman.style.transform = null;
-  fifthWoman.style.transform = null;
-  secondWoman.classList.remove(...secondWoman.classList);
-  secondWoman.classList.add("left-woman");
-  firstWoman.classList.remove(...firstWoman.classList);
-  firstWoman.classList.add("left-left-woman");
-  thirdWoman.classList.remove(...thirdWoman.classList);
-  thirdWoman.classList.add("mid-woman");
-  fourthWoman.classList.remove(...fourthWoman.classList);
-  fourthWoman.classList.add("right-woman");
-  fifthWoman.classList.remove(...fifthWoman.classList);
-  fifthWoman.classList.add("right-right-woman");
-  // fifthWoman.style.transform = "scaleX(-1) rotateY(-15deg)";
-  deleteColour();
-  thirdEclipse.classList.add("button-point");
+  if (thirdWoman.classList.contains("left-left-woman")) {
+    firstWoman.style.animation = `r-to-rr-reverse ${sliderDelay}s forwards`;
+    firstWoman.addEventListener("animationend", womanAnimationAddClass);
+    firstWoman.style.zIndex = "0";
+    secondWoman.style.animation = `rr-to-ll2 ${sliderDelay}s 0.5s forwards`;
+    secondWoman.addEventListener("animationend", womanAnimationAddClass);
+    secondWoman.style.zIndex = "-1";
+    thirdWoman.style.animation = `ll-to-l 0.5s 0.5s forwards`;
+    thirdWoman.addEventListener("animationend", womanAnimationAddClass);
+    thirdWoman.style.zIndex = "1";
+    fourthWoman.style.animation = `l-to-m-reverse 0.5s 0.5s forwards`;
+    fourthWoman.addEventListener("animationend", womanAnimationAddClass);
+    fourthWoman.style.zIndex = "4";
+    fifthWoman.style.animation = `m-to-r ${sliderDelay}s forwards`;
+    fifthWoman.addEventListener("animationend", womanAnimationAddClass);
+    fifthWoman.style.zIndex = "1";
+    setTimeout(function () {
+      firstWoman.style.animation = `rr-to-ll2 ${sliderDelay}s 0.5s forwards`;
+      firstWoman.addEventListener("animationend", womanAnimationAddClass);
+      firstWoman.style.zIndex = "-1";
+      secondWoman.style.animation = `ll-to-l ${sliderDelay}s 0.5s forwards`;
+      secondWoman.addEventListener("animationend", womanAnimationAddClass);
+      secondWoman.style.zIndex = "1";
+      thirdWoman.style.animation = `l-to-m 0.5s 0.5s forwards`;
+      thirdWoman.addEventListener("animationend", womanAnimationAddClass);
+      thirdWoman.style.zIndex = "4";
+      fourthWoman.style.animation = `m-to-r 0.5s forwards`;
+      fourthWoman.addEventListener("animationend", womanAnimationAddClass);
+      fourthWoman.style.zIndex = "1";
+      fifthWoman.style.animation = `r-to-rr ${sliderDelay}s forwards`;
+      fifthWoman.addEventListener("animationend", womanAnimationAddClass);
+      fifthWoman.style.zIndex = "0";
+    }, 1050);
+  } else if (thirdWoman.classList.contains("left-woman")) {
+    firstWoman.style.animation = `rr-to-ll2 ${sliderDelay}s 0.5s forwards`;
+    firstWoman.addEventListener("animationend", womanAnimationAddClass);
+    firstWoman.style.zIndex = "-1";
+    secondWoman.style.animation = `ll-to-l ${sliderDelay}s 0.5s forwards`;
+    secondWoman.addEventListener("animationend", womanAnimationAddClass);
+    secondWoman.style.zIndex = "1";
+    thirdWoman.style.animation = `l-to-m 0.5s 0.5s forwards`;
+    thirdWoman.addEventListener("animationend", womanAnimationAddClass);
+    thirdWoman.style.zIndex = "4";
+    fourthWoman.style.animation = `m-to-r 0.5s forwards`;
+    fourthWoman.addEventListener("animationend", womanAnimationAddClass);
+    fourthWoman.style.zIndex = "1";
+    fifthWoman.style.animation = `r-to-rr ${sliderDelay}s forwards`;
+    fifthWoman.addEventListener("animationend", womanAnimationAddClass);
+    fifthWoman.style.zIndex = "0";
+  } else if (thirdWoman.classList.contains("right-woman")) {
+    firstWoman.style.animation = `l-to-ll ${sliderDelay}s forwards`;
+    firstWoman.addEventListener("animationend", womanAnimationAddClass);
+    firstWoman.style.zIndex = "0";
+    secondWoman.style.animation = `m-to-l ${sliderDelay}s forwards`;
+    secondWoman.addEventListener("animationend", womanAnimationAddClass);
+    secondWoman.style.zIndex = "1";
+    thirdWoman.style.animation = `r-to-m 0.5s 0.5s forwards`;
+    thirdWoman.addEventListener("animationend", womanAnimationAddClass);
+    thirdWoman.style.zIndex = "4";
+    fourthWoman.style.animation = `rr-to-r 0.5s 0.5s forwards`;
+    fourthWoman.addEventListener("animationend", womanAnimationAddClass);
+    fourthWoman.style.zIndex = "1";
+    fifthWoman.style.animation = `ll-to-rr2 ${sliderDelay}s 0.5s forwards`;
+    fifthWoman.addEventListener("animationend", womanAnimationAddClass);
+    fifthWoman.style.zIndex = "-1";
+  } else if (thirdWoman.classList.contains("right-right-woman")) {
+    firstWoman.style.animation = `m-to-l ${sliderDelay}s forwards`;
+    firstWoman.addEventListener("animationend", womanAnimationAddClass);
+    firstWoman.style.zIndex = "1";
+    secondWoman.style.animation = `r-to-m-reverse ${sliderDelay}s 0.5s forwards`;
+    secondWoman.addEventListener("animationend", womanAnimationAddClass);
+    secondWoman.style.zIndex = "4";
+    thirdWoman.style.animation = `rr-to-r 0.5s 0.5s forwards`;
+    thirdWoman.addEventListener("animationend", womanAnimationAddClass);
+    thirdWoman.style.zIndex = "1";
+    fourthWoman.style.animation = `ll-to-rr2 0.5s 0.5s forwards`;
+    fourthWoman.addEventListener("animationend", womanAnimationAddClass);
+    fourthWoman.style.zIndex = "-1";
+    fifthWoman.style.animation = `l-to-ll-reverse ${sliderDelay}s forwards`;
+    fifthWoman.addEventListener("animationend", womanAnimationAddClass);
+    fifthWoman.style.zIndex = "0";
+    setTimeout(function () {
+      firstWoman.style.animation = `l-to-ll ${sliderDelay}s forwards`;
+      firstWoman.addEventListener("animationend", womanAnimationAddClass);
+      firstWoman.style.zIndex = "0";
+      secondWoman.style.animation = `m-to-l ${sliderDelay}s forwards`;
+      secondWoman.addEventListener("animationend", womanAnimationAddClass);
+      secondWoman.style.zIndex = "1";
+      thirdWoman.style.animation = `r-to-m 0.5s 0.5s forwards`;
+      thirdWoman.addEventListener("animationend", womanAnimationAddClass);
+      thirdWoman.style.zIndex = "4";
+      fourthWoman.style.animation = `rr-to-r 0.5s 0.5s forwards`;
+      fourthWoman.addEventListener("animationend", womanAnimationAddClass);
+      fourthWoman.style.zIndex = "1";
+      fifthWoman.style.animation = `ll-to-rr2 ${sliderDelay}s 0.5s forwards`;
+      fifthWoman.addEventListener("animationend", womanAnimationAddClass);
+      fifthWoman.style.zIndex = "-1";
+    }, 1050);
+  }
 }
 
 function fourthWomanChoose() {
-  firstWoman.style.transform = null;
-  secondWoman.style.transform = null;
-  thirdWoman.style.transform = null;
-  fourthWoman.style.transform = null;
-  fifthWoman.style.transform = null;
-  secondWoman.classList.remove(...secondWoman.classList);
-  secondWoman.classList.add("left-left-woman");
-  firstWoman.classList.remove(...firstWoman.classList);
-  firstWoman.classList.add("right-right-woman");
-  thirdWoman.classList.remove(...thirdWoman.classList);
-  thirdWoman.classList.add("left-woman");
-  fourthWoman.classList.remove(...fourthWoman.classList);
-  fourthWoman.classList.add("mid-woman");
-  fifthWoman.classList.remove(...fifthWoman.classList);
-  fifthWoman.classList.add("right-woman");
-  firstWoman.style.transform = "scaleX(-1) rotateY(15deg)";
-  deleteColour();
-  fourthEclipse.classList.add("button-point");
+  if (fourthWoman.classList.contains("left-left-woman-reverse")) {
+    firstWoman.style.animation = `m-to-r-reverse ${sliderDelay}s forwards`;
+    firstWoman.addEventListener("animationend", womanAnimationAddClass);
+    firstWoman.style.zIndex = "1";
+    secondWoman.style.animation = `r-to-rr-reverse ${sliderDelay}s forwards`;
+    secondWoman.addEventListener("animationend", womanAnimationAddClass);
+    secondWoman.style.zIndex = "0";
+    thirdWoman.style.animation = `rr-to-ll 0.5s 0.5s forwards`;
+    thirdWoman.addEventListener("animationend", womanAnimationAddClass);
+    thirdWoman.style.zIndex = "-1";
+    fourthWoman.style.animation = `ll-to-l-reverse 0.5s 0.5s forwards`;
+    fourthWoman.addEventListener("animationend", womanAnimationAddClass);
+    fourthWoman.style.zIndex = "1";
+    fifthWoman.style.animation = `l-to-m ${sliderDelay}s 0.5s forwards`;
+    fifthWoman.addEventListener("animationend", womanAnimationAddClass);
+    fifthWoman.style.zIndex = "4";
+    setTimeout(function () {
+      firstWoman.style.animation = `r-to-rr-reverse ${sliderDelay}s forwards`;
+      firstWoman.addEventListener("animationend", womanAnimationAddClass);
+      firstWoman.style.zIndex = "0";
+      secondWoman.style.animation = `rr-to-ll2 ${sliderDelay}s 0.5s forwards`;
+      secondWoman.addEventListener("animationend", womanAnimationAddClass);
+      secondWoman.style.zIndex = "-1";
+      thirdWoman.style.animation = `ll-to-l 0.5s 0.5s forwards`;
+      thirdWoman.addEventListener("animationend", womanAnimationAddClass);
+      thirdWoman.style.zIndex = "1";
+      fourthWoman.style.animation = `l-to-m-reverse 0.5s 0.5s forwards`;
+      fourthWoman.addEventListener("animationend", womanAnimationAddClass);
+      fourthWoman.style.zIndex = "4";
+      fifthWoman.style.animation = `m-to-r ${sliderDelay}s forwards`;
+      fifthWoman.addEventListener("animationend", womanAnimationAddClass);
+      fifthWoman.style.zIndex = "1";
+    }, 1050);
+  } else if (fourthWoman.classList.contains("right-woman")) {
+    firstWoman.style.animation = `ll-to-rr-reverse ${sliderDelay}s 0.5s forwards`;
+    firstWoman.addEventListener("animationend", womanAnimationAddClass);
+    firstWoman.style.zIndex = "-1";
+    secondWoman.style.animation = `l-to-ll ${sliderDelay}s forwards`;
+    secondWoman.addEventListener("animationend", womanAnimationAddClass);
+    secondWoman.style.zIndex = "0";
+    thirdWoman.style.animation = `m-to-l 0.5s forwards`;
+    thirdWoman.addEventListener("animationend", womanAnimationAddClass);
+    thirdWoman.style.zIndex = "1";
+    fourthWoman.style.animation = `r-to-m 0.5s 0.5s forwards`;
+    fourthWoman.addEventListener("animationend", womanAnimationAddClass);
+    fourthWoman.style.zIndex = "4";
+    fifthWoman.style.animation = `rr-to-r ${sliderDelay}s 0.5s forwards`;
+    fifthWoman.addEventListener("animationend", womanAnimationAddClass);
+    fifthWoman.style.zIndex = "1";
+  } else if (fourthWoman.classList.contains("right-right-woman")) {
+    firstWoman.style.animation = `l-to-ll ${sliderDelay}s forwards`;
+    firstWoman.addEventListener("animationend", womanAnimationAddClass);
+    firstWoman.style.zIndex = "0";
+    secondWoman.style.animation = `m-to-l ${sliderDelay}s forwards`;
+    secondWoman.addEventListener("animationend", womanAnimationAddClass);
+    secondWoman.style.zIndex = "1";
+    thirdWoman.style.animation = `r-to-m 0.5s 0.5s forwards`;
+    thirdWoman.addEventListener("animationend", womanAnimationAddClass);
+    thirdWoman.style.zIndex = "4";
+    fourthWoman.style.animation = `rr-to-r 0.5s 0.5s forwards`;
+    fourthWoman.addEventListener("animationend", womanAnimationAddClass);
+    fourthWoman.style.zIndex = "1";
+    fifthWoman.style.animation = `ll-to-rr2 ${sliderDelay}s 0.5s forwards`;
+    fifthWoman.addEventListener("animationend", womanAnimationAddClass);
+    fifthWoman.style.zIndex = "-1";
+    setTimeout(function () {
+      firstWoman.style.animation = `ll-to-rr-reverse ${sliderDelay}s 0.5s forwards`;
+      firstWoman.addEventListener("animationend", womanAnimationAddClass);
+      firstWoman.style.zIndex = "-1";
+      secondWoman.style.animation = `l-to-ll ${sliderDelay}s forwards`;
+      secondWoman.addEventListener("animationend", womanAnimationAddClass);
+      secondWoman.style.zIndex = "0";
+      thirdWoman.style.animation = `m-to-l 0.5s forwards`;
+      thirdWoman.addEventListener("animationend", womanAnimationAddClass);
+      thirdWoman.style.zIndex = "1";
+      fourthWoman.style.animation = `r-to-m 0.5s 0.5s forwards`;
+      fourthWoman.addEventListener("animationend", womanAnimationAddClass);
+      fourthWoman.style.zIndex = "4";
+      fifthWoman.style.animation = `rr-to-r ${sliderDelay}s 0.5s forwards`;
+      fifthWoman.addEventListener("animationend", womanAnimationAddClass);
+      fifthWoman.style.zIndex = "1";
+    }, 1050);
+  } else if (fourthWoman.classList.contains("left-woman-reverse")) {
+    firstWoman.style.animation = `r-to-rr-reverse ${sliderDelay}s forwards`;
+    firstWoman.addEventListener("animationend", womanAnimationAddClass);
+    firstWoman.style.zIndex = "0";
+    secondWoman.style.animation = `rr-to-ll2 ${sliderDelay}s 0.5s forwards`;
+    secondWoman.addEventListener("animationend", womanAnimationAddClass);
+    secondWoman.style.zIndex = "-1";
+    thirdWoman.style.animation = `ll-to-l 0.5s 0.5s forwards`;
+    thirdWoman.addEventListener("animationend", womanAnimationAddClass);
+    thirdWoman.style.zIndex = "1";
+    fourthWoman.style.animation = `l-to-m-reverse 0.5s 0.5s forwards`;
+    fourthWoman.addEventListener("animationend", womanAnimationAddClass);
+    fourthWoman.style.zIndex = "4";
+    fifthWoman.style.animation = `m-to-r ${sliderDelay}s forwards`;
+    fifthWoman.addEventListener("animationend", womanAnimationAddClass);
+    fifthWoman.style.zIndex = "1";
+  }
 }
 
 function fifthWomanChoose() {
-  firstWoman.style.transform = null;
-  secondWoman.style.transform = null;
-  thirdWoman.style.transform = null;
-  fourthWoman.style.transform = null;
-  fifthWoman.style.transform = null;
-  secondWoman.classList.remove(...secondWoman.classList);
-  secondWoman.classList.add("right-right-woman");
-  firstWoman.classList.remove(...firstWoman.classList);
-  firstWoman.classList.add("right-woman");
-  thirdWoman.classList.remove(...thirdWoman.classList);
-  thirdWoman.classList.add("left-left-woman");
-  fourthWoman.classList.remove(...fourthWoman.classList);
-  fourthWoman.classList.add("left-woman");
-  fifthWoman.classList.remove(...fifthWoman.classList);
-  fifthWoman.classList.add("mid-woman");
-  firstWoman.style.transform = "scaleX(-1) rotateY(15deg)";
-  secondWoman.style.transform = "scaleX(-1) rotateY(15deg)";
-  fourthWoman.style.transform = "scaleX(-1) rotateY(-15deg)";
-  deleteColour();
-  fifthEclipse.classList.add("button-point");
+  if (fifthWoman.classList.contains("left-left-woman-reverse")) {
+    firstWoman.style.animation = `l-to-m ${sliderDelay}s 0.5s forwards`;
+    firstWoman.addEventListener("animationend", womanAnimationAddClass);
+    firstWoman.style.zIndex = "4";
+    secondWoman.style.animation = `m-to-r-reverse ${sliderDelay}s forwards`;
+    secondWoman.addEventListener("animationend", womanAnimationAddClass);
+    secondWoman.style.zIndex = "1";
+    thirdWoman.style.animation = `r-to-rr 0.5s forwards`;
+    thirdWoman.addEventListener("animationend", womanAnimationAddClass);
+    thirdWoman.style.zIndex = "0";
+    fourthWoman.style.animation = `rr-to-ll-reverse 0.5s 0.5s forwards`;
+    fourthWoman.addEventListener("animationend", womanAnimationAddClass);
+    fourthWoman.style.zIndex = "-1";
+    fifthWoman.style.animation = `ll-to-l-reverse ${sliderDelay}s 0.5s forwards`;
+    fifthWoman.addEventListener("animationend", womanAnimationAddClass);
+    fifthWoman.style.zIndex = "1";
+    setTimeout(function () {
+      firstWoman.style.animation = `m-to-r-reverse ${sliderDelay}s forwards`;
+      firstWoman.addEventListener("animationend", womanAnimationAddClass);
+      firstWoman.style.zIndex = "1";
+      secondWoman.style.animation = `r-to-rr-reverse ${sliderDelay}s forwards`;
+      secondWoman.addEventListener("animationend", womanAnimationAddClass);
+      secondWoman.style.zIndex = "0";
+      thirdWoman.style.animation = `rr-to-ll 0.5s 0.5s forwards`;
+      thirdWoman.addEventListener("animationend", womanAnimationAddClass);
+      thirdWoman.style.zIndex = "-1";
+      fourthWoman.style.animation = `ll-to-l-reverse 0.5s 0.5s forwards`;
+      fourthWoman.addEventListener("animationend", womanAnimationAddClass);
+      fourthWoman.style.zIndex = "0";
+      fifthWoman.style.animation = `l-to-m-reverse ${sliderDelay}s 0.5s forwards`;
+      fifthWoman.addEventListener("animationend", womanAnimationAddClass);
+      fifthWoman.style.zIndex = "4";
+    }, 1050);
+  } else if (fifthWoman.classList.contains("left-woman-reverse")) {
+    firstWoman.style.animation = `m-to-r-reverse ${sliderDelay}s forwards`;
+    firstWoman.addEventListener("animationend", womanAnimationAddClass);
+    firstWoman.style.zIndex = "1";
+    secondWoman.style.animation = `r-to-rr-reverse ${sliderDelay}s forwards`;
+    secondWoman.addEventListener("animationend", womanAnimationAddClass);
+    secondWoman.style.zIndex = "0";
+    thirdWoman.style.animation = `rr-to-ll 0.5s 0.5s forwards`;
+    thirdWoman.addEventListener("animationend", womanAnimationAddClass);
+    thirdWoman.style.zIndex = "-1";
+    fourthWoman.style.animation = `ll-to-l-reverse 0.5s 0.5s forwards`;
+    fourthWoman.addEventListener("animationend", womanAnimationAddClass);
+    fourthWoman.style.zIndex = "0";
+    fifthWoman.style.animation = `l-to-m-reverse ${sliderDelay}s 0.5s forwards`;
+    fifthWoman.addEventListener("animationend", womanAnimationAddClass);
+    fifthWoman.style.zIndex = "4";
+  } else if (fifthWoman.classList.contains("right-woman")) {
+    firstWoman.style.animation = `rr-to-r-reverse ${sliderDelay}s 0.5s forwards`;
+    firstWoman.addEventListener("animationend", womanAnimationAddClass);
+    firstWoman.style.zIndex = "1";
+    secondWoman.style.animation = `ll-to-rr-reverse ${sliderDelay}s 0.5s forwards`;
+    secondWoman.addEventListener("animationend", womanAnimationAddClass);
+    secondWoman.style.zIndex = "-1";
+    thirdWoman.style.animation = `l-to-ll 0.5s forwards`;
+    thirdWoman.addEventListener("animationend", womanAnimationAddClass);
+    thirdWoman.style.zIndex = "0";
+    fourthWoman.style.animation = `m-to-l-reverse 0.5s forwards`;
+    fourthWoman.addEventListener("animationend", womanAnimationAddClass);
+    fourthWoman.style.zIndex = "1";
+    fifthWoman.style.animation = `r-to-m ${sliderDelay}s 0.5s forwards`;
+    fifthWoman.addEventListener("animationend", womanAnimationAddClass);
+    fifthWoman.style.zIndex = "4";
+  } else if (fifthWoman.classList.contains("right-right-woman")) {
+    firstWoman.style.animation = `ll-to-rr-reverse ${sliderDelay}s 0.5s forwards`;
+    firstWoman.addEventListener("animationend", womanAnimationAddClass);
+    firstWoman.style.zIndex = "-1";
+    secondWoman.style.animation = `l-to-ll ${sliderDelay}s forwards`;
+    secondWoman.addEventListener("animationend", womanAnimationAddClass);
+    secondWoman.style.zIndex = "0";
+    thirdWoman.style.animation = `m-to-l 0.5s forwards`;
+    thirdWoman.addEventListener("animationend", womanAnimationAddClass);
+    thirdWoman.style.zIndex = "1";
+    fourthWoman.style.animation = `r-to-m 0.5s 0.5s forwards`;
+    fourthWoman.addEventListener("animationend", womanAnimationAddClass);
+    fourthWoman.style.zIndex = "4";
+    fifthWoman.style.animation = `rr-to-r ${sliderDelay}s 0.5s forwards`;
+    fifthWoman.addEventListener("animationend", womanAnimationAddClass);
+    fifthWoman.style.zIndex = "1";
+    setTimeout(function () {
+      firstWoman.style.animation = `rr-to-r-reverse ${sliderDelay}s 0.5s forwards`;
+      firstWoman.addEventListener("animationend", womanAnimationAddClass);
+      firstWoman.style.zIndex = "1";
+      secondWoman.style.animation = `ll-to-rr-reverse ${sliderDelay}s 0.5s forwards`;
+      secondWoman.addEventListener("animationend", womanAnimationAddClass);
+      secondWoman.style.zIndex = "-1";
+      thirdWoman.style.animation = `l-to-ll 0.5s forwards`;
+      thirdWoman.addEventListener("animationend", womanAnimationAddClass);
+      thirdWoman.style.zIndex = "0";
+      fourthWoman.style.animation = `m-to-l-reverse 0.5s forwards`;
+      fourthWoman.addEventListener("animationend", womanAnimationAddClass);
+      fourthWoman.style.zIndex = "1";
+      fifthWoman.style.animation = `r-to-m ${sliderDelay}s 0.5s forwards`;
+      fifthWoman.addEventListener("animationend", womanAnimationAddClass);
+      fifthWoman.style.zIndex = "4";
+    }, 1050);
+  }
 }
 
 firstWoman.addEventListener("click", firstWomanChoose);
